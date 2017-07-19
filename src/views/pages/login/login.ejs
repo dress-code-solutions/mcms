@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Login</h1>
+            <fieldset>
+              <form>
+                <label>
+                    username: <input type="text" id="user" name="user" />
+                </label>
+                <label>
+                    password: <input type="password" id="pass" name="pass" />
+                </label>
+              </form>
+            </fieldset>
+            <script>
+            $("#user").change(function() {
+              // check length
+              if($('#user').val().length <4 || $('#user').val().length >24 ||
+            !/a-z/.test($('#user').val()))
+              alert('Username must be between 4 and 24 characters long');
+              $('#user').val("");
+            });
+            $("#pass").change(function() {
+              if($('#pass').val().length <4 || $('#pass').val().length >24)
+              alert('Password must be between 4 and 24 characters long');
+              $('#user').val("");
+            });
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+
+</body>
+</html>

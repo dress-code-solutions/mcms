@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Register</h1>
+            <fieldset>
+              <form>
+                <label>
+                    First Name: <input type="text" id="fname" name="fname" />
+                </label>
+                <label>
+                    Last Name: <input type="text" id="lname" name="lname" />
+                </label>
+                <label>
+                    Password: <input type="password" id="pass1" name="pass1" />
+                </label>
+                <label>
+                    Repeat Password: <input type="password" id="pass2" name="pass2" />
+                </label>
+                <label>
+                    email: <input type="text" id="email" name="email" />
+                </label>
+                <label>
+                    Address: <input type="text" id="address" name="address" />
+                </label>
+                <label>
+                    City: <input type="text" id="city" name="city" />
+                </label>
+                <label>
+                    Province: <select>
+
+                              </select>
+                </label>
+
+
+              </form>
+            </fieldset>
+            <script>
+            $("#user").change(function() {
+              // check length
+              if($('#user').val().length <4 || $('#user').val().length >24 ||
+            !/a-z/.test($('#user').val()))
+              alert('Username must be between 4 and 24 characters long');
+              $('#user').val("");
+            });
+            $("#pass").change(function() {
+              if($('#pass').val().length <4 || $('#pass').val().length >24)
+              alert('Password must be between 4 and 24 characters long');
+              $('#user').val("");
+            });
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+
+</body>
+</html>
