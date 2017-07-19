@@ -20,6 +20,7 @@ app.get('/login', function(req, res) {
 
 // register page
 app.get('/register', function(req, res) {
+    
     res.render('pages/login/register');
 });
 
