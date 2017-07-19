@@ -13,9 +13,14 @@ app.get('/', function(req, res) {
     res.render('pages/index');
 });
 
-// index page
+// Login page
 app.get('/login', function(req, res) {
     res.render('pages/login/login');
+});
+
+// register page
+app.get('/register', function(req, res) {
+    res.render('pages/login/register');
 });
 
 // about page
