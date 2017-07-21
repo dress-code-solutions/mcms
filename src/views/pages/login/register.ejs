@@ -63,10 +63,15 @@
               alert('Username must be between 4 and 24 characters long');
               $('#user').val("");
             });
-            $("#pass").change(function() {
-              if($('#pass').val().length <4 || $('#pass').val().length >24)
+            $("#pass1").change(function() {
+              if($('#pass1').val().length <4 || $('#pass1').val().length >24)
               alert('Password must be between 4 and 24 characters long');
-              $('#user').val("");
+              $('#pass1').val("");
+            });
+            $("#pass2").change(function() {
+              if($('#pass2').val().length <4 || $('#pass2').val().length >24)
+              alert('Password must be between 4 and 24 characters long');
+              $('#pass2').val("");
             });
             </script>
         </div>
