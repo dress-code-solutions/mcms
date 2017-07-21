@@ -82,7 +82,11 @@
             $("#address").change(function() {
                 if($("#address").val().length < 4 || $("#address").val().length > 255) {
                     alert("Address is invalid");
+                    $("#address").val("");
                 }
+            });
+            $("#city").change(function() {
+                
             });
             </script>
         </div>
