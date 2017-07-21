@@ -73,6 +73,11 @@
               alert('Password must be between 4 and 24 characters long');
               $('#pass2').val("");
             });
+            $("#email").change(function() {
+                if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#email".val()))) { 
+                    alert($("#email").val() + " is not a valid email address");
+                }
+            });
             </script>
         </div>
     </main>
