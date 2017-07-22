@@ -48,7 +48,7 @@
                                 <option id="8">Nunivut</option>
                                 <option id="9">Ontario</option>
                                 <option id="10">Prince Edward Island</option>
-                                <optionid="11">Quebec</option>
+                                <option id="11">Quebec</option>
                               </select>
                 </label>
 
@@ -57,28 +57,29 @@
             </fieldset>
             <script>
             $("#user").change(function() {
-              // check length
-              if($('#user').val().length <4 || $('#user').val().length >24 ||
-            !/a-z/.test($('#user').val()))
+              // TODO:  regex only characters and numbers
+              if($('#user').val().length < 4 || $('#user').val().length > 24 &&
+            /a-z\d/.test($('#user').val()) && /\s/.test($('#user').val()))
               alert('Username must be between 4 and 24 characters long');
               $('#user').val("");
             });
             $("#pass1").change(function() {
-              if($('#pass1').val().length <4 || $('#pass1').val().length >24)
-              alert('Password must be between 4 and 24 characters long');
-              $('#pass1').val("");
+              if($('#pass1').val().length <4 || $('#pass1').val().length >24) {
+              alert('Password must be between 4 and 24 characters long'); 
+              $('#pass1').val(""); }
             });
             $("#pass2").change(function() {
-              if($('#pass2').val().length <4 || $('#pass2').val().length >24)
+              if($('#pass2').val().length <4 || $('#pass2').val().length >24) {
               alert('Password must be between 4 and 24 characters long');
-              $('#pass2').val("");
+              $('#pass2').val(""); }
             });
             $("#email").change(function() {
-                if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#email".val()))) { 
-                    alert($("#email").val() + " is not a valid email address");
+                if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#email").val())) { 
+                   alert($("#email").val() + " is not a valid email address");
                     $('#email').val("");
                 }
             });
+            // TODO:  regex only characters and numbers and period
             $("#address").change(function() {
                 if($("#address").val().length < 4 || $("#address").val().length > 255) {
                     alert("Address is invalid");
@@ -86,8 +87,17 @@
                 }
             });
             $("#city").change(function() {
-                
-            });
+                if($("#city").val().length < 4 || $("#city").val().length > 255) {
+                    alert("city is invalid");
+                    $("#city").val("");
+                }
+            }); /*
+            $("#province").change(function() {
+                if($("#province".) {
+                    alert("Province is invalid");
+                    $("#province").val("");
+                }
+            }); */
             </script>
         </div>
     </main>
